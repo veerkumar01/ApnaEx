@@ -52,3 +52,13 @@ if __name__ == "__main__":
         # Wait for them (if one dies, we'll exit too)
         for p in procs:
             p.join()
+            from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'GreyMatters'
+
+
+if __name__ == "__main__":
+    app.run()
